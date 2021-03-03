@@ -26,7 +26,7 @@ class TenisTest extends TestCase
 
         $result = $Tenis->getScore();
 
-        $this->assertEquals("0 - 0", $result);
+        $this->assertEquals("Love all", $result);
     }
 
     /**
@@ -36,9 +36,10 @@ class TenisTest extends TestCase
         $Tenis = new Tenis();
         $Tenis->constructor("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
 
         $result = $Tenis->getScore();
-        $this->assertEquals("15 - 0", $result);
+        $this->assertEquals("Fifteen all", $result);
     }
 
     /**
