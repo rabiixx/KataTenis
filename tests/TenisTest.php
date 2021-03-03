@@ -53,8 +53,40 @@ class TenisTest extends TestCase
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
 
-        $result = $Tenis->getScore("Pedro");
+        $result = $Tenis->getScore();
         $this->assertEquals("Gana Pedro", $result);
+    }
+
+    /**
+     * @test
+     */
+    public function uno_con_mas_de_40_y_el_otro_con_40_NO_gana_partido(){
+        $Tenis = new Tenis();
+        $Tenis->constructor("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Pedro");
+
+        $result = $Tenis->getScore();
+        $this->assertEquals("Advantage Pedro", $result);
+    }
+    /**
+     * @test
+     */
+    public function con_mismas_puntuaciones_pone_all(){
+        $Tenis = new Tenis();
+        $Tenis->constructor("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+
+        $result = $Tenis->getScore();
+        $this->assertEquals("Thirty all", $result);
     }
 
 
