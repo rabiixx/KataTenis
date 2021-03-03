@@ -6,19 +6,27 @@ use PHPUnit\Framework\TestCase;
 
 class TenisTest extends TestCase
 {
+    /**
+     * @test
+     */
+    public function crea_bien_partido(){
+        $partidoTenis = new Tenis();
 
+        $result = $partidoTenis->constructor("Pedro","Juan");
+
+        $this->assertEquals(["Pedro",0,"Juan",0], $result);
+    }
 
     /**
      * @test
      */
     public function consulta_bien_puntuacion(){
         $Tenis = new Tenis();
-        $Jugador = new Jugador();
-        $Jugador->setPuntuacion(0);
+        $Tenis->constructor("Pedro","Juan");
 
-        $result = $Tenis->consultar_puntuacion($Jugador);
+        $result = $Tenis->getScore();
 
-        $this->assertEquals(0, $result);
+        $this->assertEquals("0 - 0", $result);
     }
 
     /**
@@ -26,24 +34,29 @@ class TenisTest extends TestCase
      */
     public function suma_tantos_bien(){
         $Tenis = new Tenis();
-        $Jugador = new Jugador();
-        $Jugador->setPuntuacion(0);
+        $Tenis->constructor("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
 
-        $result = $Tenis->suma_tanto($Jugador);
-
-        $this->assertEquals(15, $result);
+        $result = $Tenis->getScore();
+        $this->assertEquals("15 - 0", $result);
     }
 
     /**
      * @test
      */
-    public function crea_bien_partido(){
-        $RomanToDecimal = new Tenis();
+    public function con_mas_de_40_gana_partido(){
+        $Tenis = new Tenis();
+        $Tenis->constructor("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
 
-        $result = $RomanToDecimal->crear_partido();
-
-        $this->assertEquals([0,0], $result);
+        $result = $Tenis->getScore("Pedro");
+        $this->assertEquals("Gana Pedro", $result);
     }
+
+
 
 
 }
