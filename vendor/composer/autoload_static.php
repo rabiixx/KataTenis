@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd6fdd6260eda112cce956bfd65483810
+class ComposerStaticInitc01ee5e91507d6dc781df0b2f36d36d3
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -106,10 +106,7 @@ class ComposerStaticInitd6fdd6260eda112cce956bfd65483810
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
-        'Deg540\\PHPTestingBoilerplate\\Calculator' => __DIR__ . '/../..' . '/src/Calculator.php',
-        'Deg540\\PHPTestingBoilerplate\\DecimalToRoman' => __DIR__ . '/../..' . '/src/DecimalToRoman.php',
-        'Deg540\\PHPTestingBoilerplate\\Test\\CalculatorTest' => __DIR__ . '/../..' . '/tests/CalculatorTest.php',
-        'Deg540\\PHPTestingBoilerplate\\Test\\DecimalToRomanTest' => __DIR__ . '/../..' . '/tests/DecimalToRomanTest.php',
+        'Deg540\\PHPTestingBoilerplate\\Tenis' => __DIR__ . '/../..' . '/src/Tenis.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
         'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
@@ -1156,9 +1153,9 @@ class ComposerStaticInitd6fdd6260eda112cce956bfd65483810
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd6fdd6260eda112cce956bfd65483810::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd6fdd6260eda112cce956bfd65483810::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd6fdd6260eda112cce956bfd65483810::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc01ee5e91507d6dc781df0b2f36d36d3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc01ee5e91507d6dc781df0b2f36d36d3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc01ee5e91507d6dc781df0b2f36d36d3::$classMap;
 
         }, null, ClassLoader::class);
     }

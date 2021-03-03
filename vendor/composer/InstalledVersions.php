@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e042f9da142374cec9643d0ffc911d2421aa3640',
+    'reference' => '4a72d2213c892efd546087cacdab7165666bfc70',
     'name' => 'deg540/php-testing-boilerplate',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e042f9da142374cec9643d0ffc911d2421aa3640',
+      'reference' => '4a72d2213c892efd546087cacdab7165666bfc70',
     ),
     'doctrine/instantiator' => 
     array (
