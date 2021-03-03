@@ -24,10 +24,9 @@ class TenisTest extends TestCase
     public function suma_tantos_bien(){
         $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
-        $Tenis->wonPoint("Juan");
 
         $result = $Tenis->getScore();
-        $this->assertEquals("Fifteen all", $result);
+        $this->assertEquals("Fifteen - Love", $result);
     }
 
     /**
@@ -63,7 +62,7 @@ class TenisTest extends TestCase
     /**
      * @test
      */
-    public function con_mismas_puntuaciones_pone_all(){
+    public function con_mismas_puntuaciones_pone_puntuacion_all(){
         $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
@@ -74,7 +73,43 @@ class TenisTest extends TestCase
         $this->assertEquals("Thirty all", $result);
     }
 
+    /**
+     * @test
+     */
+    public function si_van_40_40_devuelve_deuce(){
+        $Tenis = new Tenis("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
 
+        $result = $Tenis->getScore();
+        $this->assertEquals("Deuce", $result);
+    }
+
+    /**
+     * @test
+     */
+    public function si_hace_punto_el_que_no_llevaba_la_ventaja_vuelve_a_deuce(){
+        $Tenis = new Tenis("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+
+        $result = $Tenis->getScore();
+        $this->assertEquals("Deuce", $result);
+    }
 
 
 }

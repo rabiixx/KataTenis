@@ -36,6 +36,9 @@ class Tenis
             }
             return $this->traducir_marcador($this->jugador1->getPuntuacion()) . " - " . $this->traducir_marcador($this->jugador2->getPuntuacion());
         }
+        if($this->jugador1->getPuntuacion() == 45){
+            return "Deuce";
+        }
         return $this->traducir_marcador($this->jugador1->getPuntuacion()) . " all";
     }
 
@@ -43,11 +46,19 @@ class Tenis
     {
         if($this->jugador1->getNombre() == $nombreJugador){
             $puntuacion = $this->jugador1->getPuntuacion();
-            $this->jugador1->setPuntuacion($puntuacion+15);
+            if($puntuacion == 45 && $this->jugador2->getPuntuacion()>45){
+                $this->jugador2->setPuntuacion(45);
+            } else{
+                $this->jugador1->setPuntuacion($puntuacion+15);
+            }
         }
         if($this->jugador2->getNombre() == $nombreJugador){
             $puntuacion = $this->jugador2->getPuntuacion();
-            $this->jugador2->setPuntuacion($puntuacion+15);
+            if($puntuacion == 45 && $this->jugador1->getPuntuacion()>45){
+                $this->jugador1->setPuntuacion(45);
+            } else {
+                $this->jugador2->setPuntuacion($puntuacion + 15);
+            }
         }
 
     }
