@@ -9,7 +9,7 @@ class Tenis
     public $jugador1;
     public $jugador2;
 
-    public function constructor($nombre1,$nombre2)
+    public function __construct($nombre1,$nombre2)
     {
         $this->jugador1 = new Jugador();
         $this->jugador1->setPuntuacion(0);
@@ -17,7 +17,6 @@ class Tenis
         $this->jugador2 = new Jugador();
         $this->jugador2->setPuntuacion(0);
         $this->jugador2->setNombre($nombre2);
-        return [$this->jugador1->getNombre(),$this->jugador1->getPuntuacion(),$this->jugador2->getNombre(),$this->jugador2->getPuntuacion()];
     }
 
     public function getScore()

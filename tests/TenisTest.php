@@ -6,23 +6,12 @@ use PHPUnit\Framework\TestCase;
 
 class TenisTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function crea_bien_partido(){
-        $partidoTenis = new Tenis();
-
-        $result = $partidoTenis->constructor("Pedro","Juan");
-
-        $this->assertEquals(["Pedro",0,"Juan",0], $result);
-    }
 
     /**
      * @test
      */
     public function consulta_bien_puntuacion(){
-        $Tenis = new Tenis();
-        $Tenis->constructor("Pedro","Juan");
+        $Tenis = new Tenis("Pedro","Juan");
 
         $result = $Tenis->getScore();
 
@@ -33,8 +22,7 @@ class TenisTest extends TestCase
      * @test
      */
     public function suma_tantos_bien(){
-        $Tenis = new Tenis();
-        $Tenis->constructor("Pedro","Juan");
+        $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Juan");
 
@@ -46,8 +34,7 @@ class TenisTest extends TestCase
      * @test
      */
     public function con_mas_de_40_gana_partido(){
-        $Tenis = new Tenis();
-        $Tenis->constructor("Pedro","Juan");
+        $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
@@ -61,8 +48,7 @@ class TenisTest extends TestCase
      * @test
      */
     public function uno_con_mas_de_40_y_el_otro_con_40_NO_gana_partido(){
-        $Tenis = new Tenis();
-        $Tenis->constructor("Pedro","Juan");
+        $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
@@ -78,8 +64,7 @@ class TenisTest extends TestCase
      * @test
      */
     public function con_mismas_puntuaciones_pone_all(){
-        $Tenis = new Tenis();
-        $Tenis->constructor("Pedro","Juan");
+        $Tenis = new Tenis("Pedro","Juan");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Pedro");
         $Tenis->wonPoint("Juan");
