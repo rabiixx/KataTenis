@@ -16,4 +16,19 @@ class Tenis
         $jugador2->setPuntuacion(0);
         return[$jugador1->getPuntuacion(),$jugador2->getPuntuacion()];
     }
+
+    public function consultar_puntuacion($jugador)
+    {
+        return $jugador->getPuntuacion();
+    }
+
+    public function suma_tanto(Jugador $Jugador)
+    {
+        $puntuacion = $Jugador->getPuntuacion();
+        $Jugador->setPuntuacion($puntuacion+15);
+        $puntuacion = $Jugador->getPuntuacion();
+        return $puntuacion;
+    }
+
+
 }
