@@ -64,14 +64,14 @@ class Tenis
     }
 
     private function ha_ganado_1(){
-        if($this->jugador1->getPuntuacion() > 45 && $this->jugador2->getPuntuacion() < 45){
+        if(($this->jugador1->getPuntuacion() > 45 && $this->jugador2->getPuntuacion() < 45) || ($this->jugador1->getPuntuacion() > 60)){
             return true;
         }else{
             return false;
         }
     }
     private function ha_ganado_2(){
-        if($this->jugador2->getPuntuacion() > 45 && $this->jugador1->getPuntuacion() < 45){
+        if(($this->jugador2->getPuntuacion() > 45 && $this->jugador1->getPuntuacion() < 45) || ($this->jugador2->getPuntuacion() > 60)){
             return true;
         }else{
             return false;

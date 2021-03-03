@@ -111,5 +111,24 @@ class TenisTest extends TestCase
         $this->assertEquals("Deuce", $result);
     }
 
+    /**
+     * @test
+     */
+    public function si_jugador_con_ventaja_vuelve_a_puntuar_gana(){
+        $Tenis = new Tenis("Pedro","Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Juan");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Pedro");
+
+        $result = $Tenis->getScore();
+        $this->assertEquals("Gana Pedro", $result);
+    }
+
+
 
 }
