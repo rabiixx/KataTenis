@@ -130,5 +130,17 @@ class TenisTest extends TestCase
     }
 
 
+    /**
+     * @test
+     */
+    public function si_hace_punto_alguien_que_no_esta_jugando_no_lo_cuenta(){
+        $Tenis = new Tenis("Pedro","Jorge");
+        $Tenis->wonPoint("Pedro");
+        $Tenis->wonPoint("Agustin");
+
+        $result = $Tenis->getScore();
+        $this->assertEquals("Fifteen - Love", $result);
+    }
+
 
 }
