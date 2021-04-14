@@ -1,8 +1,5 @@
 name: learn-github-actions
-on:
-	push:
-		branches:
-			- develop
+on: [push]
 jobs:
 	validate:
 		runs-on: ubuntu-latest
